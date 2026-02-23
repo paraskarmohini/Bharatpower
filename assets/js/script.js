@@ -741,11 +741,6 @@
     let mobileNavContainer = document.querySelector(".mobile-nav__container");
     mobileNavContainer.innerHTML = navContent;
   }
-  if ($(".main-menu__list").length && $(".inverter-nav__container").length) {
-    let navContent = document.querySelector(".main-menu__list").outerHTML;
-    let inverterNavContainer = document.querySelector(".inverter-nav__container");
-    inverterNavContainer.innerHTML = navContent;
-  }
   if ($(".sticky-header__content").length) {
     let navContent = document.querySelector(".main-menu").innerHTML;
     let mobileNavContainer = document.querySelector(".sticky-header__content");
@@ -774,48 +769,11 @@
     });
   }
 
-  if ($(".inverter-nav__container .main-menu__list").length) {
-    let dropdownAnchor = $(
-      ".inverter-nav__container .main-menu__list .dropdown > a"
-    );
-    dropdownAnchor.each(function () {
-      let self = $(this);
-      let toggleBtn = document.createElement("BUTTON");
-      toggleBtn.setAttribute("aria-label", "dropdown toggler");
-      toggleBtn.innerHTML = "<i class='fa fa-angle-down'></i>";
-      self.append(function () {
-        return toggleBtn;
-      });
-      self.find("button").on("click", function (e) {
-        e.preventDefault();
-        let self = $(this);
-        self.toggleClass("expanded");
-        self.parent().toggleClass("expanded");
-        self.parent().parent().children("ul").slideToggle();
-      });
-    });
-  }
-
   if ($(".mobile-nav__toggler").length) {
     $(".mobile-nav__toggler").on("click", function (e) {
       e.preventDefault();
       $(".mobile-nav__wrapper").toggleClass("expanded");
       $("body").toggleClass("locked");
-    });
-  }
-
-  if ($(".inverter-nav__toggler").length) {
-    $(".inverter-nav__toggler").on("click", function (e) {
-      e.preventDefault();
-      $(".inverter-nav__wrapper").toggleClass("expanded");
-      $("body").toggleClass("locked");
-    });
-  }
-
-  if ($(".inverter-nav__overlay").length) {
-    $(".inverter-nav__overlay").on("click", function () {
-      $(".inverter-nav__wrapper").removeClass("expanded");
-      $("body").removeClass("locked");
     });
   }
 
