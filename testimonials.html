@@ -53,7 +53,7 @@
     <link rel="stylesheet" href="assets/css/module-css/brand.css" />
     <link rel="stylesheet" href="assets/css/module-css/pricing.css" />
     <link rel="stylesheet" href="assets/css/module-css/testimonial.css" />
-    
+    <link rel="stylesheet" href="assets/css/module-css/blog.css" />
     <link rel="stylesheet" href="assets/css/module-css/page-header.css" />
 
 
@@ -79,34 +79,41 @@
     <!--End Preloader-->
 
 
-    <div class="chat-icon"><button type="button" class="chat-toggler"><i class="fa fa-comment"></i></button></div>
-    <!--Chat Popup-->
-    <div id="chat-popup" class="chat-popup">
-        <div class="popup-inner">
-            <div class="close-chat"><i class="fa fa-times"></i></div>
-            <div class="chat-form">
-                <p>Please fill out the form below and we will get back to you as soon as possible.</p>
-                <form action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/assets/inc/sendemail.php" method="POST" class="contact-form-validated">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Text"></textarea>
-                    </div>
-                    <div class="form-group message-btn">
-                        <button type="submit" class="thm-btn">
-                            Submit Now
-                            <span class="icon-arrow-right"></span>
-                        </button>
-                    </div>
-                    <div class="result"></div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918308067878?text=Hello%20Bharat%20Solar!%20I%20would%20like%20to%20inquire%20about%20solar%20panels." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: #FFF;
+        }
+        
+        .whatsapp-float i {
+            margin-top: 0;
+        }
+    </style>
 
 
     <!-- Start sidebar widget content -->
@@ -121,7 +128,7 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                                <a href="index.html" style="font-size: 32px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #1a1a1a;">Solar</span></a>
                             </div>
                             <div class="content-box">
                                 <h4>About Us</h4>
@@ -160,7 +167,7 @@
                                     </li>
                                     <li>
                                         <span class="icon-call"></span>
-                                        <a href="tel:123456789">+1 555-9990-153</a>
+                                        <a href="tel:123456789">+91 8308067878</a>
                                     </li>
                                     <li>
                                         <span class="icon-envelope"></span>
@@ -205,7 +212,7 @@
                                 <i class="icon-call"></i>
                             </div>
                             <div class="text">
-                                <p><a href="tel:8308067878">8308067878</a></p>
+                                <p><a href="tel:15502505260">+1 (550) 250 5260</a></p>
                             </div>
                         </li>
                         <li>
@@ -226,7 +233,7 @@
                             </div>
                         </li>
                     </ul>
-                    <p class="main-menu__top-welcome-text"></p>
+                    <p class="main-menu__top-welcome-text">Welcome to Bharat Power Solar Energy</p>
                     <div class="main-menu__top-right">
                         <div class="main-menu__top-time">
                             <div class="main-menu__top-time-icon">
@@ -234,7 +241,10 @@
                             </div>
                             <p class="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
                         </div>
-                        
+                        <div class="main-menu__social">
+                           <a href="#"><i class="fab fa-facebook"></i></a>
+                           
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,11 +253,10 @@
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                                <a href="index.html" style="font-size: 32px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #1a1a1a;">Solar</span></a>
                             </div>
                         </div>
                         <div class="main-menu__main-menu-box">
-                            <a href="#" class="inverter-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li>
                                     <a href="index.html">Home</a>
@@ -267,28 +276,10 @@
                                         <li><a href="404.html">404 Error</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">Services</a>
-                                    <ul class="shadow-box">
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="Solar Maintenance-service.html">Solar System Solar Maintenance</a></li>
-                                        
-                                        <li><a href="installing-ceiling-fan.html">Installing a solar consultation</a></li>
-                                        
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#">Shop</a>
-                                     <ul class="shadow-box">
-                                        <li><a href="products.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        
-                                        <li><a href="sign-up.html">Sign Up</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                    </ul>
-                                </li>
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li><a href="contact.html">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -299,7 +290,8 @@
                                 </div>
                                 <div class="main-menu__call-content">
                                     <p class="main-menu__call-sub-title">Call Anytime</p>
-                                    <h5 class="main-menu__call-number"><a href="tel:8308067878">8308067878</a></h5>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
+                                            6780</a></h5>
                                 </div>
                             </div>
                             <div class="main-menu__search-cart-box">
@@ -308,7 +300,6 @@
                                         <a href="#"
                                             class="main-menu__search searcher-toggler-box icon-search-interface-symbol"></a>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div class="main-menu__nav-sidebar-icon">
@@ -372,9 +363,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Adam
-                                                Smith</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Ajay Dhore</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -385,7 +375,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Excellent solar panels! My electricity bills dropped by 70%. Professional installation and great service. Highly recommend Bharat Solar!"</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -404,9 +394,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Robert
-                                                Son</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Shantanu Katare</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -417,7 +406,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Outstanding quality solar panels for our business! We are saving thousands on energy costs. The team was knowledgeable and supportive."</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -436,9 +425,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Alisha
-                                                Martin</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Prathmesh Pandhre</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -449,7 +437,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Very impressed with the installation service! They explained everything clearly and helped us choose the perfect system. Our home runs on clean energy now!"</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -468,9 +456,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Adam
-                                                Smith</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Ajay Dhore</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -481,7 +468,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Best decision we made for our factory! The solar system pays for itself and we're contributing to a cleaner environment. Excellent service from Bharat Solar!"</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -500,9 +487,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Robert
-                                                Son</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Shantanu Katare</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -513,7 +499,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Reliable solar panels with great after-sales support. The monitoring system helps us track our energy production. Very satisfied with Bharat Solar!"</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -532,9 +518,8 @@
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Alisha
-                                                Martin</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Co-Founder</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Prathmesh Pandhre</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -545,7 +530,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Bharat Power Solar Energy provided excellent solar panels for our facility. The quality is outstanding and our energy costs have reduced significantly. Highly recommend their solar solutions!</p>
+                            <p class="testimonial-one__text">"Professional team and quality products! Our solar system has been running flawlessly for months. Highly recommend for anyone looking to go solar!"</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -567,7 +552,7 @@
                         <div class="col-xl-3 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget__about">
                                 <div class="footer-widget__logo">
-                                    <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                                    <a href="index.html" style="font-size: 36px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 6px rgba(0,0,0,0.3);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #ffffff;">Solar</span></a>
                                 </div>
                                 <p class="footer-widget__about-text">Leading solar panel distribution company providing sustainable energy solutions for residential, commercial, and industrial applications. Quality products, expert service. </p>
                                 <div class="footer-widget__working-box">
@@ -592,9 +577,7 @@
                                     <div class="footer-widget__newsletter-bg"
                                         style="background-image: url(assets/images/backgrounds/footer-widget-newsletter-bg.jpg);">
                                     </div>
-                                    <h3 class="footer-widget__newsletter-title">Subscribe To Our Newsletter To<br>
-                                        Get
-                                        Latest Update</h3>
+                                    <h3 class="footer-widget__newsletter-title">Subscribe To Our Newsletter<br>For Solar Energy Updates</h3>
                                     <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL"
                                         novalidate="novalidate">
                                         <div class="footer-widget__newsletter-form-input-box">
@@ -616,7 +599,6 @@
                                                         <li><a href="about.html">About Us</a></li>
                                                         <li><a href="projects.html">Portfolio</a></li>
                                                         <li><a href="faq.html">Help & FAQs</a></li>
-                                                        
                                                         <li><a href="contact.html">Contact</a></li>
                                                     </ul>
                                                 </div>
@@ -628,12 +610,12 @@
                                                     <h3 class="footer-widget__title">Our Services</h3>
                                                 </div>
                                                 <ul class="footer-widget__link list-unstyled">
-                                                    <li><a href="electric-panel-Solar Installation.html">Solar Panel Solar Installation</a></li>
-                                                    <li><a href="installing-ceiling-fan.html">Solar Monitoring SystemSolar Installation</a>
+                                                    <li><a href="electric-panel-solar solar Solar Installation.html">Solar Panel solar Solar Installation</a></li>
+                                                    <li><a href="installing-ceiling-fan.html">Solar solar Solar Monitoring System solar solar Solar Installation</a>
                                                     </li>
-                                                    <li><a href="commercial-services.html">Smart Solar BatterySolar Installation</a></li>
-                                                    <li><a href="lighting-solar panels.html">solar inverterSolar Installation</a></li>
-                                                    <li><a href="short-solar panel-Solar Installation.html">Solar SystemSolar Installation</a></li>
+                                                    <li><a href="commercial-services.html">Smart Solar Battery solar solar Solar Installation</a></li>
+                                                    <li><a href="lighting-solar panels.html">solar inverter solar solar Solar Installation</a></li>
+                                                    <li><a href="short-solar panel-solar solar Solar Installation.html">Solar System solar solar Solar Installation</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -648,8 +630,10 @@
                                                             <span class="icon-solar battery-call"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="tel:885747546027">8308067878</a></p>
-                                                            <p><a href="tel:885747546027">8308067878</a></p>
+                                                            <p><a href="tel:885747546027">+91 8308067878
+</a></p>
+                                                            
+</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -657,9 +641,7 @@
                                                             <span class="icon-envelope"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
-                                                            </p>
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
+                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a>
                                                             </p>
                                                         </div>
                                                     </li>
@@ -687,61 +669,13 @@
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copywright 2025 by <a href="#">Bharat Power Solar Energy</a> All Rights
-                            Reserved.</p>
-                        <ul class="list-unstyled site-footer__bottom-menu">
-                            <li><a href="contact.html">Support</a></li>
-                            <li><a href="about.html">Terms and Condition</a></li>
-                            <li><a href="about.html">Privacy and Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+            </footer>
         <!--Site Footer End-->
 
     </div><!-- /.page-wrapper -->
 
 
-    <div class="inverter-nav__wrapper">
-        <div class="inverter-nav__overlay inverter-nav__toggler"></div>
-        <!-- /.inverter-nav__overlay -->
-        <div class="inverter-nav__content">
-            <span class="inverter-nav__close inverter-nav__toggler"><i class="fa fa-times"></i></span>
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="140"
-                        alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="inverter-nav__container"></div>
-            <!-- /.inverter-nav__container -->
-
-            <ul class="inverter-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
-                </li>
-                <li>
-                    <i class="fas fa-solar battery"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.inverter-nav__contact -->
-            <div class="inverter-nav__top">
-                <div class="inverter-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.inverter-nav__social -->
-            </div><!-- /.inverter-nav__top -->
-
-        </div>
-        <!-- /.inverter-nav__content -->
-    </div>
-    <!-- /.inverter-nav__wrapper -->
+    
 
 
 
@@ -749,7 +683,7 @@
     <div class="search-popup">
         <div class="color-layer"></div>
         <button class="close-search"><span class="far fa-times fa-fw"></span></button>
-        <form method="post" action="index.html">
+        <form method="post" action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/blog.html">
             <div class="form-group">
                 <input type="search" name="search-field" value="" placeholder="Search Here" required="">
                 <button type="submit"><i class="fas fa-search"></i></button>

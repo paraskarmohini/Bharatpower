@@ -53,7 +53,8 @@
     <link rel="stylesheet" href="assets/css/module-css/brand.css" />
     <link rel="stylesheet" href="assets/css/module-css/pricing.css" />
     <link rel="stylesheet" href="assets/css/module-css/testimonial.css" />
-    
+    <link rel="stylesheet" href="assets/css/module-css/blog.css" />
+
 
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -78,34 +79,41 @@
 
 
 
-    <div class="chat-icon"><button type="button" class="chat-toggler"><i class="fa fa-comment"></i></button></div>
-    <!--Chat Popup-->
-    <div id="chat-popup" class="chat-popup">
-        <div class="popup-inner">
-            <div class="close-chat"><i class="fa fa-times"></i></div>
-            <div class="chat-form">
-                <p>Please fill out the form below and we will get back to you as soon as possible.</p>
-                <form action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/assets/inc/sendemail.php" method="POST" class="contact-form-validated">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Text"></textarea>
-                    </div>
-                    <div class="form-group message-btn">
-                        <button type="submit" class="thm-btn">
-                            Submit Now
-                            <span class="icon-arrow-right"></span>
-                        </button>
-                    </div>
-                    <div class="result"></div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918308067878?text=Hello%20Bharat%20Solar!%20I%20would%20like%20to%20inquire%20about%20solar%20panels." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            color: #FFF;
+        }
+        
+        .whatsapp-float i {
+            margin-top: 0;
+        }
+    </style>
 
 
     <!-- Start sidebar widget content -->
@@ -120,7 +128,7 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-2.png" alt="" /></a>
+                                <a href="index.html" style="font-size: 32px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #1a1a1a;">Solar</span></a>
                             </div>
                             <div class="content-box">
                                 <h4>About Us</h4>
@@ -159,7 +167,7 @@
                                     </li>
                                     <li>
                                         <span class="icon-call"></span>
-                                        <a href="tel:123456789">+1 555-9990-153</a>
+                                        <a href="tel:123456789">+91 8308067878</a>
                                     </li>
                                     <li>
                                         <span class="icon-envelope"></span>
@@ -204,7 +212,7 @@
                                 <i class="icon-call"></i>
                             </div>
                             <div class="text">
-                                <p><a href="tel:8308067878">+918308067878</a></p>
+                                <p><a href="tel:15502505260">+91 8308067878</a></p>
                             </div>
                         </li>
                         <li>
@@ -225,7 +233,7 @@
                             </div>
                         </li>
                     </ul>
-                    <p class="main-menu__top-welcome-text"></p>
+                    <p class="main-menu__top-welcome-text">Welcome to Bharat Power Solar Energy</p>
                     <div class="main-menu__top-right">
                         <div class="main-menu__top-time">
                             <div class="main-menu__top-time-icon">
@@ -233,7 +241,7 @@
                             </div>
                             <p class="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
                         </div>
-                        
+                       
                     </div>
                 </div>
             </div>
@@ -242,11 +250,11 @@
                     <div class="main-menu__wrapper-inner">
                         <div class="main-menu__left">
                             <div class="main-menu__logo">
-                                <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                                <a href="index.html" style="font-size: 32px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #1a1a1a;">Solar</span></a>
                             </div>
                         </div>
                         <div class="main-menu__main-menu-box">
-                            <a href="#" class="inverter-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                             <ul class="main-menu__list">
                                 <li>
                                     <a href="index.html">Home</a>
@@ -265,27 +273,9 @@
                                         <li><a href="404.html">404 Error</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">Services</a>
-                                    <ul class="shadow-box">
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="Solar Maintenance-service.html">Solar System Solar Maintenance</a></li>
-                                        
-                                        <li><a href="installing-ceiling-fan.html">Installing a solar consultation</a></li>
-                                        
-                                    </ul>
+                                <li>
+                                    <a href="services.html">Services</a>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#">Shop</a>
-                                    <ul class="shadow-box">
-                                        <li><a href="products.html">Products</a></li>
-                                        <li><a href="product-details.html">Product Details</a></li>
-                                        
-                                        <li><a href="sign-up.html">Sign Up</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                    </ul>
-                                </li>
-                                
                                 <li>
                                     <a href="contact.html">Contact</a>
                                 </li>
@@ -298,7 +288,8 @@
                                 </div>
                                 <div class="main-menu__call-content">
                                     <p class="main-menu__call-sub-title">Call Anytime</p>
-                                    <h5 class="main-menu__call-number"><a href="tel:8308067878">+918308067878</a></h5>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
+                                            6780</a></h5>
                                 </div>
                             </div>
                             <div class="main-menu__search-cart-box">
@@ -307,7 +298,6 @@
                                         <a href="#"
                                             class="main-menu__search searcher-toggler-box icon-search-interface-symbol"></a>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div class="main-menu__nav-sidebar-icon">
@@ -348,7 +338,7 @@
                     </div>
                     <div class="main-slider__bg-box">
                         <div class="main-slider__bg"
-                            style="background-image: url(assets/images/backgrounds/slider-1-1.jpg);">
+                            style="background-image: url(assets/images/backgrounds/slider-bg1.png);">
                         </div><!-- /.slider-one__bg -->
                     </div>
                     <div class="container">
@@ -365,14 +355,6 @@
                                     <a href="about.html" class="thm-btn">Discover More <span
                                             class="icon-arrow-right"></span></a>
                                 </div>
-                                <div class="main-slider__video-link">
-                                    
-                                        <div class="main-slider__video-icon">
-                                            <span class="fa fa-play"></span>
-                                            <i class="ripple"></i>
-                                        </div>
-                                   
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -389,7 +371,7 @@
                     </div>
                     <div class="main-slider__bg-box">
                         <div class="main-slider__bg"
-                            style="background-image: url(assets/images/backgrounds/slider-1-2.jpg);">
+                            style="background-image: url(assets/images/backgrounds/slider-bg2.png);">
                         </div><!-- /.slider-one__bg -->
                     </div>
                     <div class="container">
@@ -405,14 +387,6 @@
                                     <a href="about.html" class="thm-btn">Discover More <span
                                             class="icon-arrow-right"></span></a>
                                 </div>
-                                <div class="main-slider__video-link">
-                                   
-                                        <div class="main-slider__video-icon">
-                                            <span class="fa fa-play"></span>
-                                            <i class="ripple"></i>
-                                        </div>
-                                  
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -429,7 +403,7 @@
                     </div>
                     <div class="main-slider__bg-box">
                         <div class="main-slider__bg"
-                            style="background-image: url(assets/images/backgrounds/slider-1-3.jpg);">
+                            style="background-image: url(assets/images/backgrounds/slider-bg3.jpg);">
                         </div><!-- /.slider-one__bg -->
                     </div>
                     <div class="container">
@@ -440,19 +414,11 @@
                             </div>
                             <h2 class="main-slider__title">Sustainable Solutions for <br> Your
                                 <span>Energy Needs</span></h2>
-                            <p class="main-slider__text">Partner with us for top-tier solar panel distribution, Solar Installation support, <br> and Solar System Solar Maintenances. Reduce costs and carbon footprint with clean solar energy.</p>
+                            <p class="main-slider__text">Partner with us for top-tier solar panel distribution, solar Solar Installation support, <br> and Solar System solar Solar Maintenances. Reduce costs and carbon footprint with clean solar energy.</p>
                             <div class="main-slider__btn-box">
                                 <div class="main-slider__btn">
                                     <a href="about.html" class="thm-btn">Discover More <span
                                             class="icon-arrow-right"></span></a>
-                                </div>
-                                <div class="main-slider__video-link">
-                                   
-                                        <div class="main-slider__video-icon">
-                                            <span class="fa fa-play"></span>
-                                            <i class="ripple"></i>
-                                        </div>
-                                  
                                 </div>
                             </div>
                         </div>
@@ -478,7 +444,7 @@
                                 </div>
                                 <div class="feature-one__icon-and-title">
                                     <div class="feature-one__icon">
-                                        <span class="icon-solar expert-1"></span>
+                                        <span class="icon-customer-support"></span>
                                     </div>
                                     <h3 class="feature-one__title"><a href="about.html">Expert Solar <br>Consultants</a></h3>
                                 </div>
@@ -503,9 +469,7 @@
                                     </div>
                                     <h3 class="feature-one__title"><a href="contact.html">24/7<br> Our Service</a></h3>
                                 </div>
-                                <p class="feature-one__text">The wise man therefore always holds in these matters to
-                                    this
-                                    principle of</p>
+                                <p class="feature-one__text">Round-the-clock customer support and maintenance services to ensure your solar system operates at peak efficiency</p>
                                 <div class="feature-one__read-more">
                                     <a href="contact.html">read more<span class="icon-arrow-right"></span></a>
                                 </div>
@@ -527,9 +491,7 @@
                                     <h3 class="feature-one__title"><a href="services.html">Quality <br>Guarantee</a>
                                     </h3>
                                 </div>
-                                <p class="feature-one__text">The wise man therefore always holds in these matters to
-                                    this
-                                    principle of</p>
+                                <p class="feature-one__text">Premium certified solar panels with comprehensive warranty coverage and guaranteed performance standards</p>
                                 <div class="feature-one__read-more">
                                     <a href="services.html">read more<span class="icon-arrow-right"></span></a>
                                 </div>
@@ -564,7 +526,7 @@
                                         <span>+</span>
                                     </div>
                                     <p class="about-one__experience-text">Years Experiences
-                                        Solar System Solar Maintenances</p>
+                                        Solar System solar Solar Maintenances</p>
                                 </div>
                                 <div class="about-one__shape-1 float-bob-x"></div>
                             </div>
@@ -576,7 +538,7 @@
                                 <h6 class="section-title__tagline"><span
                                         class="section-title__tagline-border"></span>ABOUT
                                     US</h6>
-                                <h3 class="section-title__title title-animation">Welcome To Solar Panel Distribution & Solar Installation Company
+                                <h3 class="section-title__title title-animation">Welcome To Solar Panel Distribution & solar Solar Installation Company
                                 </h3>
                             </div>
                             <p class="about-one__text">There are many variations of passages available randomised words
@@ -624,7 +586,12 @@
                                     <p>Skilled solar experts Invest in a quality solar battery case to protect solar equipment.</p>
                                 </li>
                             </ul>
-                          
+                            <div class="about-one__btn-and-video">
+                                <div class="about-one__btn-box">
+                                    <a href="about.html" class="thm-btn">Discover More<span
+                                            class="icon-arrow-right"></span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -670,12 +637,13 @@
                                         <div class="services-one__icon">
                                             <span class="icon-inverter-solar battery"></span>
                                         </div>
-                                        <h3 class="services-one__title"><a href="#">Smart solar battery
-                                               Solar Installation<br> Service</a>
+                                        <h3 class="services-one__title"><a href="commercial-services.html">Smart solar battery
+                                                solar solar Solar Installation<br> Service</a>
                                         </h3>
                                         <p class="services-one__single-text">There are many variations available
                                             majority of word have in some form suffered.</p>
-                                        
+                                        <a href="commercial-services.html" class="services-one__read-more">Learn
+                                            More<span class="icon-arrow-right"></span></a>
                                     </div>
                                 </div>
                                 <!--Services One Single End-->
@@ -685,11 +653,12 @@
                                         <div class="services-one__icon">
                                             <span class="icon-chirger"></span>
                                         </div>
-                                        <h3 class="services-one__title"><a href="#">Gadget
-                                               Solar Installation<br> Service</a></h3>
+                                        <h3 class="services-one__title"><a href="installing-ceiling-fan.html">Gadget
+                                                solar solar Solar Installation<br> Service</a></h3>
                                         <p class="services-one__single-text">There are many variations available
                                             majority of word have in some form suffered.</p>
-                                        
+                                        <a href="installing-ceiling-fan.html" class="services-one__read-more">Learn
+                                            More<span class="icon-arrow-right"></span></a>
                                     </div>
                                 </div>
                                 <!--Services One Single End-->
@@ -699,24 +668,42 @@
                                         <div class="services-one__icon">
                                             <span class="icon-lamp"></span>
                                         </div>
-                                        <h3 class="services-one__title"><a href="#">
+                                        <h3 class="services-one__title"><a href="lighting-solar panels.html">
                                                 Solar System Upgrade<br> Service</a></h3>
                                         <p class="services-one__single-text">There are many variations available
                                             majority of word have in some form suffered.</p>
-                                       
+                                        <a href="lighting-solar panels.html" class="services-one__read-more">Learn More<span
+                                                class="icon-arrow-right"></span></a>
                                     </div>
                                 </div>
-                               
+                                <!--Services One Single End-->
+                                <!--Services One Single Start-->
+                                <div class="item">
+                                    <div class="services-one__single">
+                                        <div class="services-one__icon">
+                                            <span class="icon-air-conditioning"></span>
+                                        </div>
+                                        <h3 class="services-one__title"><a href="solar Solar Maintenance-service.html">Tablets &
+                                                iPad <br>Services</a></h3>
+                                        <p class="services-one__single-text">There are many variations available
+                                            majority of word have in some form suffered.</p>
+                                        <a href="solar Solar Maintenance-service.html" class="services-one__read-more">Learn
+                                            More<span class="icon-arrow-right"></span></a>
+                                    </div>
+                                </div>
+                                <!--Services One Single End-->
+                                <!--Services One Single Start-->
                                 <div class="item">
                                     <div class="services-one__single">
                                         <div class="services-one__icon">
                                             <span class="icon-solar inverter"></span>
                                         </div>
-                                        <h3 class="services-one__title"><a href="#">
-                                                solar inverter & Solar System<br>Solar Installation</a></h3>
+                                        <h3 class="services-one__title"><a href="commercial-services.html">
+                                                solar inverter & Solar System<br> solar solar Solar Installation</a></h3>
                                         <p class="services-one__single-text">There are many variations available
                                             majority of word have in some form suffered.</p>
-                                        
+                                        <a href="commercial-services.html" class="services-one__read-more">Learn
+                                            More<span class="icon-arrow-right"></span></a>
                                     </div>
                                 </div>
                                 <!--Services One Single End-->
@@ -754,7 +741,7 @@
                                                 <div class="content">
                                                     <h3>
                                                         Warranty Service</h3>
-                                                    <p>Duis aute irure dolor in repreh enderit.</p>
+                                                    <p>Complete warranty for solar products.</p>
                                                 </div>
                                             </li>
                                             <li class="wow fadeInLeft" data-wow-delay="400ms">
@@ -763,7 +750,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h3>Secured solar equipment</h3>
-                                                    <p>Duis aute irure dolor in repreh enderit.</p>
+                                                    <p>Certified panels with advanced security.</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -776,7 +763,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h3>Customer Service</h3>
-                                                    <p>Duis aute irure dolor in repreh enderit.</p>
+                                                    <p>24/7 support for solar needs.</p>
                                                 </div>
                                             </li>
                                             <li class="wow fadeInRight" data-wow-delay="300ms">
@@ -785,7 +772,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h3>Clean Energy Solution</h3>
-                                                    <p>Duis aute irure dolor in repreh enderit.</p>
+                                                    <p>Sustainable energy for greener tomorrow.</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -799,20 +786,12 @@
                             data-wow-duration="2500ms">
                             <div class="why-choose-one__img-box">
                                 <div class="why-choose-one__img">
-                                    <img src="assets/images/resources/why-choose-one-img-1.jpg" alt="">
+                                    <img src="assets/images/resources/why-choose-one-img-1.png" alt="">
                                 </div>
                                 <div class="why-choose-one__img-2">
                                     <img src="assets/images/resources/why-choose-one-img-2.jpg" alt="">
                                 </div>
                                 <div class="why-choose-one__shape-1"></div>
-                                <div class="why-choose-one__video-link">
-                                   
-                                        <div class="why-choose-one__video-icon">
-                                            <span class="icon-play"></span>
-                                            <i class="ripple"></i>
-                                        </div>
-                                 
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -838,7 +817,7 @@
                                 <h3 class="odometer" data-count="1.25">00</h3>
                                 <span>K</span>
                             </div>
-                            <p class="counter-one__count-text">Solar Installations</p>
+                            <p class="counter-one__count-text">Solar solar Solar Installations</p>
                         </div>
                     </li>
                     <!--Counter One Single End-->
@@ -935,7 +914,7 @@
                                     </div>
                                 </div>
                                 <div class="project-one__content">
-                                    <p class="project-one__sub-title">solar systemSolar Installation</p>
+                                    <p class="project-one__sub-title">solar system solar solar Solar Installation</p>
                                     <h3 class="project-one__title"><a href="project-details.html">Solar System Upgrade</a>
                                     </h3>
                                 </div>
@@ -977,7 +956,7 @@
                                 <div class="project-one__content">
                                     <p class="project-one__sub-title">Solar System Recovery</p>
                                     <h3 class="project-one__title"><a href="project-details.html">solar equipment &
-                                            Solar Software</a>
+                                            solar Solar Software</a>
                                     </h3>
                                 </div>
                             </div>
@@ -996,9 +975,9 @@
                                     </div>
                                 </div>
                                 <div class="project-one__content">
-                                    <p class="project-one__sub-title">MacSolar Installation</p>
+                                    <p class="project-one__sub-title">Mac solar solar Solar Installation</p>
                                     <h3 class="project-one__title"><a href="project-details.html">Apple Isolar battery
-                                           Solar Installation</a>
+                                            solar solar Solar Installation</a>
                                     </h3>
                                 </div>
                             </div>
@@ -1017,7 +996,7 @@
                                     </div>
                                 </div>
                                 <div class="project-one__content">
-                                    <p class="project-one__sub-title">CameraSolar Installation</p>
+                                    <p class="project-one__sub-title">Camera solar solar Solar Installation</p>
                                     <h3 class="project-one__title"><a href="project-details.html">Microsolar battery Faults</a>
                                     </h3>
                                 </div>
@@ -1061,31 +1040,19 @@
             <div class="container">
                 <div class="video-one__inner wow fadeInUp" data-wow-delay="300ms">
                     <div class="section-title text-center sec-title-animation animation-style1">
-                        <h6 class="section-title__tagline"><span class="section-title__tagline-border"></span>Latest
-                            Video
+                        <h6 class="section-title__tagline"><span class="section-title__tagline-border"></span>Get In Touch
                         </h6>
-                        <h3 class="section-title__title title-animation">Let Us Know Or Contact Us
+                        <h3 class="section-title__title title-animation">Ready To Go Solar? Contact Us Today
                         </h3>
                     </div>
-                    <p class="video-one__text">There are many variations of passages available but the majority have
-                        suffered alteration<br> in some form by injected humour randomised words look even going<br> to
-                        use
-                        a passage believable.</p>
-                    <div class="video-one__video-link">
-                      
-                            <div class="video-one__video-icon">
-                                <span class="fa fa-play"></span>
-                                <i class="ripple"></i>
-                            </div>
-                      
-                    </div>
+                    <p class="video-one__text">Transform your energy consumption with our premium solar panel solutions. Our expert team<br> is ready to help you choose the perfect solar system for your home or business.<br> Get a free consultation and quote today!</p>
                     <div class="video-one__contact-box">
                         <div class="video-one__img-1 wow slideInRight" data-wow-delay="100ms"
                             data-wow-duration="2500ms">
                             <img src="assets/images/resources/video-one-contact-img-1.png" alt="" class="float-bob-x">
                         </div>
                         <div class="row">
-                            <div class="col-xl-8 col-lg-6">
+                            <div class="col-xl-8 col-lg-7">
                                 <form class="contact-form-validated video-one-contact__form"
                                     action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/assets/inc/sendemail.php" method="post" novalidate="novalidate">
                                     <div class="row">
@@ -1104,13 +1071,13 @@
                                             <div class="video-one-contact__input-box">
                                                 <div class="select-box">
                                                     <select class="selectmenu wide">
-                                                        <option selected="selected">Service Type
+                                                        <option selected="selected">Select Solar Service
                                                         </option>
-                                                        <option>Type Of Service 01</option>
-                                                        <option>Type Of Service 02</option>
-                                                        <option>Type Of Service 03</option>
-                                                        <option>Type Of Service 04</option>
-                                                        <option>Type Of Service 05</option>
+                                                        <option>Residential Solar Installation</option>
+                                                        <option>Commercial Solar Solutions</option>
+                                                        <option>Solar Panel Distribution</option>
+                                                        <option>Solar System Maintenance</option>
+                                                        <option>Solar Energy Consultation</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -1128,7 +1095,7 @@
                                 </form>
                                 <div class="result"></div>
                             </div>
-                            <div class="col-xl-4 col-lg-6">
+                            <div class="col-xl-4 col-lg-5">
                                 <div class="video-one-contact__info-box">
                                     <h3 class="video-one-contact__info-title">Contact Info</h3>
                                     <ul class="video-one-contact__info-list list-unstyled">
@@ -1145,8 +1112,9 @@
                                                 <span class="icon-call"></span>
                                             </div>
                                             <div class="content">
-                                                <p><a href="tel:0882466422710">+918308067878</a></p>
-                                                <p><a href="tel:0882466422710">+918308067878</a></p>
+                                                <p><a href="tel:+919288006780"> +91 8308067878
+                                                    
+                                                </a></p>
                                             </div>
                                         </li>
                                         <li>
@@ -1154,8 +1122,7 @@
                                                 <span class="icon-envelope"></span>
                                             </div>
                                             <div class="content">
-                                                <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a></p>
-                                                <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a></p>
+                                                <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a></p>
                                             </div>
                                         </li>
                                     </ul>
@@ -1168,7 +1135,6 @@
         </section>
         <!--Video One End -->
 
-       
         <!--Brand One Start-->
         <section class="brand-one">
             <div class="container">
@@ -1176,8 +1142,8 @@
                     <!--Brand One Single Start-->
                     <div class="item">
                         <div class="brand-one__single">
-                            <div class="brand-one__img">
-                                <img src="assets/images/brand/brand-1-1.png" alt="">
+                            <div class="brand-one__img" style="display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                                <span style="font-size: 28px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #666;"><span style="color: #2ecc71;">Bharat</span> Solar</span>
                             </div>
                         </div>
                     </div>
@@ -1185,8 +1151,8 @@
                     <!--Brand One Single Start-->
                     <div class="item">
                         <div class="brand-one__single">
-                            <div class="brand-one__img">
-                                <img src="assets/images/brand/brand-1-1.png" alt="">
+                            <div class="brand-one__img" style="display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                                <span style="font-size: 28px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #666;"><span style="color: #2ecc71;">Bharat</span> Solar</span>
                             </div>
                         </div>
                     </div>
@@ -1194,8 +1160,8 @@
                     <!--Brand One Single Start-->
                     <div class="item">
                         <div class="brand-one__single">
-                            <div class="brand-one__img">
-                                <img src="assets/images/brand/brand-1-1.png" alt="">
+                            <div class="brand-one__img" style="display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                                <span style="font-size: 28px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #666;"><span style="color: #2ecc71;">Bharat</span> Solar</span>
                             </div>
                         </div>
                     </div>
@@ -1203,8 +1169,8 @@
                     <!--Brand One Single Start-->
                     <div class="item">
                         <div class="brand-one__single">
-                            <div class="brand-one__img">
-                                <img src="assets/images/brand/brand-1-1.png" alt="">
+                            <div class="brand-one__img" style="display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                                <span style="font-size: 28px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #666;"><span style="color: #2ecc71;">Bharat</span> Solar</span>
                             </div>
                         </div>
                     </div>
@@ -1212,8 +1178,8 @@
                     <!--Brand One Single Start-->
                     <div class="item">
                         <div class="brand-one__single">
-                            <div class="brand-one__img">
-                                <img src="assets/images/brand/brand-1-1.png" alt="">
+                            <div class="brand-one__img" style="display: flex; align-items: center; justify-content: center; min-height: 80px;">
+                                <span style="font-size: 28px; font-weight: 700; font-family: 'Archivo', sans-serif; color: #666;"><span style="color: #2ecc71;">Bharat</span> Solar</span>
                             </div>
                         </div>
                     </div>
@@ -1223,7 +1189,157 @@
         </section>
         <!--Brand One End-->
 
-       
+        <!--Pricing One Start-->
+        <section class="pricing-one">
+            <div class="container">
+                <div class="section-title text-center sec-title-animation animation-style1">
+                    <h6 class="section-title__tagline"><span class="section-title__tagline-border"></span>Solar Plans
+                    </h6>
+                    <h3 class="section-title__title title-animation">Solar System Capacity Plans</h3>
+                </div>
+                <div class="row">
+                    <!--Pricing One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="100ms">
+                        <div class="pricing-one__single">
+                            <div class="pricing-one__title-box">
+                                <h3 class="pricing-one__title">3 HP System</h3>
+                                <p class="pricing-one__price">3 kW <span>Capacity</span></p>
+                            </div>
+                            <ul class="pricing-one__price-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>12 Solar Panels (250W each)</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>3 kW Solar Inverter</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Mounting Structure Included</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Complete Installation Service</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>5 Year Warranty</p>
+                                </li>
+                            </ul>
+                            <div class="pricing-one__btn-box">
+                                <a href="contact.html" class="thm-btn">Get Quote<span
+                                        class="icon-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pricing One Single End-->
+                    <!--Pricing One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="pricing-one__single">
+                            <div class="pricing-one__title-box">
+                                <h3 class="pricing-one__title">5 HP System</h3>
+                                <p class="pricing-one__price">5 kW <span>Capacity</span></p>
+                            </div>
+                            <ul class="pricing-one__price-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>20 Solar Panels (250W each)</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>5 kW Solar Inverter</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Mounting Structure Included</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Complete Installation Service</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>10 Year Warranty</p>
+                                </li>
+                            </ul>
+                            <div class="pricing-one__btn-box">
+                                <a href="contact.html" class="thm-btn">Get Quote<span
+                                        class="icon-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pricing One Single End-->
+                    <!--Pricing One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="500ms">
+                        <div class="pricing-one__single">
+                            <div class="pricing-one__title-box">
+                                <h3 class="pricing-one__title">10 HP System</h3>
+                                <p class="pricing-one__price">10 kW <span>Capacity</span></p>
+                            </div>
+                            <ul class="pricing-one__price-list list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>40 Solar Panels (250W each)</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>10 kW Solar Inverter</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Mounting Structure Included</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>Complete Installation Service</p>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <p>15 Year Warranty</p>
+                                </li>
+                            </ul>
+                            <div class="pricing-one__btn-box">
+                                <a href="contact.html" class="thm-btn">Get Quote<span
+                                        class="icon-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pricing One Single End-->
+                </div>
+            </div>
+        </section>
+        <!--Pricing One End-->
 
         <!--Testimonial One Start-->
         <section class="testimonial-one">
@@ -1253,12 +1369,12 @@
                                 <div class="testimonial-one__client-info">
                                     <div class="testimonial-one__client-img-box">
                                         <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/mohini.jpg" alt="">
+                                            <img src="assets/images/testimonial/testimonial-1-1.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Mohini</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Homeowner</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Ajay Dhore</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -1269,7 +1385,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">"Installing solar panels was the best decision! My electricity bills have dropped by 70% and I am contributing to a greener future. The team was professional and installation was seamless."</p>
+                            <p class="testimonial-one__text">“Excellent solar panels! My electricity bills dropped by 70%. Professional installation and great service. Highly recommend Bharat Power Solar Energy!</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -1284,12 +1400,12 @@
                                 <div class="testimonial-one__client-info">
                                     <div class="testimonial-one__client-img-box">
                                         <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/prathmesh.jpg" alt="">
+                                            <img src="assets/images/testimonial/testimonial-1-2.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Prathmesh</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Business Owner</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Shantanu Katare</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -1300,7 +1416,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“The commercial solar solution has transformed our business operations. We are now energy independent and saving thousands monthly. Excellent ROI and outstanding customer support!</p>
+                            <p class="testimonial-one__text">“Outstanding quality solar panels for our business! We are saving thousands on energy costs. The team was knowledgeable and supportive throughout.</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -1315,12 +1431,12 @@
                                 <div class="testimonial-one__client-info">
                                     <div class="testimonial-one__client-img-box">
                                         <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/rajeshri.jpg" alt="">
+                                            <img src="assets/images/testimonial/testimonial-1-3.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Rajeshri</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Factory Manager</p>
+                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Prathmesh Pandhre</a></h3>
+                                        <p class="testimonial-one__client-sub-title">Solar Customer</p>
                                     </div>
                                 </div>
                                 <div class="testimonial-one__client-ratting">
@@ -1331,193 +1447,7 @@
                                     <span class="fas fa-star"></span>
                                 </div>
                             </div>
-                            <p class="testimonial-one__text">“Our industrial solar plant is exceeding expectations. The quality of equipment and installation was top-notch. We have achieved complete energy self-sufficiency.</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/ajay.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Ajay</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Residential Customer</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"The solar water heating system is amazing! Hot water 24/7 without electricity bills. The installation was quick and the team explained everything perfectly."</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/laxmi.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Priyanka</a></h3>
-                                        <p class="testimonial-one__client-sub-title">School Principal</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"Our school now runs on clean solar energy! Students are learning about renewable energy firsthand. Great educational tool and cost-effective solution."</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/shantanu.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Shantanu</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Farm Owner</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"Solar pumps have revolutionized our farming! No more dependency on erratic electricity supply. Consistent water supply and reduced operational costs."</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/aniket.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Aniket</a></h3>
-                                        <p class="testimonial-one__client-sub-title">IT Professional</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"Smart solar system with app monitoring is fantastic! I can track my energy generation and consumption in real-time. Perfect blend of technology and sustainability."</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/harshali.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Harshali</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Hospital Administrator</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"Reliable solar power backup for our hospital is critical. The system ensures uninterrupted medical services. Excellent investment in patient care and infrastructure."</p>
-                        </div>
-                    </div>
-                    <!--Testimonial One Single End-->
-                    <!--Testimonial One Single Start-->
-                    <div class="item">
-                        <div class="testimonial-one__single">
-                            <div class="testimonial-one__single-bdr"></div>
-                            <div class="testimonial-one__quote">
-                                <span class="fas fa-quote-right"></span>
-                            </div>
-                            <div class="testimonial-one__client-info-box">
-                                <div class="testimonial-one__client-info">
-                                    <div class="testimonial-one__client-img-box">
-                                        <div class="testimonial-one__client-img">
-                                            <img src="assets/images/testimonial/laxmi.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-one__client-content">
-                                        <h3 class="testimonial-one__client-name"><a href="testimonials.html">Laxmi</a></h3>
-                                        <p class="testimonial-one__client-sub-title">Retail Shop Owner</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-one__client-ratting">
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                </div>
-                            </div>
-                            <p class="testimonial-one__text">"Solar rooftop system powers my entire shop! Zero electricity bills and reliable power during peak business hours. Best business decision I've made!"</p>
+                            <p class="testimonial-one__text">“Very impressed with the installation service! They explained everything clearly and helped us choose the perfect system. Our home runs on clean energy now!</p>
                         </div>
                     </div>
                     <!--Testimonial One Single End-->
@@ -1525,8 +1455,6 @@
             </div>
         </section>
         <!--Testimonial One End-->
-
-       
 
         <!--Site Footer Start-->
         <footer class="site-footer">
@@ -1541,7 +1469,7 @@
                         <div class="col-xl-3 wow fadeInUp" data-wow-delay="100ms">
                             <div class="footer-widget__column footer-widget__about">
                                 <div class="footer-widget__logo">
-                                    <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                                    <a href="index.html" style="font-size: 36px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 6px rgba(0,0,0,0.3);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #ffffff;">Solar</span></a>
                                 </div>
                                 <p class="footer-widget__about-text">Leading solar panel distribution company providing sustainable energy solutions for residential, commercial, and industrial applications. Quality products, expert service.</p>
                                 <div class="footer-widget__working-box">
@@ -1566,9 +1494,8 @@
                                     <div class="footer-widget__newsletter-bg"
                                         style="background-image: url(assets/images/backgrounds/footer-widget-newsletter-bg.jpg);">
                                     </div>
-                                    <h3 class="footer-widget__newsletter-title">Subscribe To Our Newsletter To<br>
-                                        Get
-                                        Latest Update</h3>
+                                    <h3 class="footer-widget__newsletter-title">Subscribe To Our Newsletter<br>
+                                        For Solar Energy Updates</h3>
                                     <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL"
                                         novalidate="novalidate">
                                         <div class="footer-widget__newsletter-form-input-box">
@@ -1590,7 +1517,6 @@
                                                         <li><a href="about.html">About Us</a></li>
                                                         <li><a href="projects.html">Portfolio</a></li>
                                                         <li><a href="faq.html">Help & FAQs</a></li>
-                                                        
                                                         <li><a href="contact.html">Contact</a></li>
                                                     </ul>
                                                 </div>
@@ -1602,12 +1528,11 @@
                                                     <h3 class="footer-widget__title">Our Services</h3>
                                                 </div>
                                                 <ul class="footer-widget__link list-unstyled">
-                                                    <li><a href="electric-panel-Solar Installation.html">Solar Panel Solar Installation</a></li>
-                                                    <li><a href="installing-ceiling-fan.html">Solar Monitoring SystemSolar Installation</a>
-                                                    </li>
-                                                    <li><a href="commercial-services.html">Smart Solar BatterySolar Installation</a></li>
-                                                    <li><a href="lighting-solar panels.html">solar inverterSolar Installation</a></li>
-                                                    <li><a href="short-solar panel-Solar Installation.html">Solar SystemSolar Installation</a></li>
+                                                    <li><a href="services.html">Solar Panel Installation</a></li>
+                                                    <li><a href="services.html">Solar Panel Distribution</a></li>
+                                                    <li><a href="services.html">Commercial Solar Solutions</a></li>
+                                                    <li><a href="services.html">Solar System Maintenance</a></li>
+                                                    <li><a href="services.html">Solar Energy Consultation</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1619,11 +1544,11 @@
                                                 <ul class="footer-widget__contact list-unstyled">
                                                     <li>
                                                         <div class="icon">
-                                                            <span class="icon-solar battery-call"></span>
+                                                            <span class="icon-phone-call"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="tel:885747546027">+918308067878</a></p>
-                                                            <p><a href="tel:885747546027">+918308067878</a></p>
+                                                            <p><a href="tel:+919288006780">+91 8308067878
+</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -1631,10 +1556,7 @@
                                                             <span class="icon-envelope"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
-                                                            </p>
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
-                                                            </p>
+                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -1661,19 +1583,6 @@
                     </div>
                 </div>
             </div>
-            <div class="site-footer__bottom">
-                <div class="container">
-                    <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">Bharat Power Solar Energy</a> All Rights
-                            Reserved.</p>
-                        <ul class="list-unstyled site-footer__bottom-menu">
-                            <li><a href="contact.html">Support</a></li>
-                            <li><a href="about.html">Terms and Condition</a></li>
-                            <li><a href="about.html">Privacy and Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </footer>
         <!--Site Footer End-->
 
@@ -1684,50 +1593,49 @@
     </div><!-- /.page-wrapper -->
 
 
-    <div class="inverter-nav__wrapper">
-        <div class="inverter-nav__overlay inverter-nav__toggler"></div>
-        <!-- /.inverter-nav__overlay -->
-        <div class="inverter-nav__content">
-            <span class="inverter-nav__close inverter-nav__toggler"><i class="fa fa-times"></i></span>
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="140"
-                        alt="" /></a>
+                <a href="index.html" aria-label="logo image" style="font-size: 32px; font-weight: 700; text-decoration: none; font-family: 'Archivo', sans-serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);"><span style="color: #2ecc71;">Bharat</span> <span style="color: #1a1a1a;">Solar</span></a>
             </div>
             <!-- /.logo-box -->
-            <div class="inverter-nav__container"></div>
-            <!-- /.inverter-nav__container -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
 
-            <ul class="inverter-nav__contact list-unstyled">
+            <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
+                    <a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a>
                 </li>
                 <li>
-                    <i class="fas fa-solar battery"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919288006780">+91 8308067878
+</a>
                 </li>
-            </ul><!-- /.inverter-nav__contact -->
-            <div class="inverter-nav__top">
-                <div class="inverter-nav__social">
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
                     <a href="#" class="fab fa-twitter"></a>
                     <a href="#" class="fab fa-facebook-square"></a>
                     <a href="#" class="fab fa-pinterest-p"></a>
                     <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.inverter-nav__social -->
-            </div><!-- /.inverter-nav__top -->
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
 
         </div>
-        <!-- /.inverter-nav__content -->
+        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.inverter-nav__wrapper -->
-
+    <!-- /.mobile-nav__wrapper -->
 
 
     <!-- Search Popup -->
     <div class="search-popup">
         <div class="color-layer"></div>
         <button class="close-search"><span class="far fa-times fa-fw"></span></button>
-        <form method="post" action="index.html">
+        <form method="post" action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/blog.html">
             <div class="form-group">
                 <input type="search" name="search-field" value="" placeholder="Search Here" required="">
                 <button type="submit"><i class="fas fa-search"></i></button>
