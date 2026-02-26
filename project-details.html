@@ -214,7 +214,7 @@
                                 <i class="icon-call"></i>
                             </div>
                             <div class="text">
-                                <p><a href="tel:15502505260">+1 (550) 250 5260</a></p>
+                                <p><a href="tel:15502505260"> +91 8308067878</a></p>
                             </div>
                         </li>
                         <li>
@@ -231,7 +231,7 @@
                                 <i class="icon-location"></i>
                             </div>
                             <div class="text">
-                                <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                <p id="rotating-address">Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar</p>
                             </div>
                         </li>
                     </ul>
@@ -243,6 +243,48 @@
                             </div>
                             <p class="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
                         </div>
+
+<style>
+#rotating-address, #rotating-phone {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#rotating-address.fade-out, #rotating-phone.fade-out {
+    opacity: 0;
+}
+</style>
+
+<script>
+(function() {
+    const addresses = [
+        'Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar',
+        'Pimpalgaon Chilamkha Road, Deolgaon Raja, Buldhana - 443204'
+    ];
+    const phones = [
+        { display: '+91 8308067878', href: 'tel:918308067878' },
+        { display: '+91 087665 36240', href: 'tel:918766536240' }
+    ];
+    let currentIndex = 0;
+    const addressElement = document.getElementById('rotating-address');
+    const phoneElement = document.getElementById('rotating-phone');
+    
+    function rotateContent() {
+        addressElement.classList.add('fade-out');
+        phoneElement.classList.add('fade-out');
+        
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % addresses.length;
+            addressElement.textContent = addresses[currentIndex];
+            phoneElement.textContent = phones[currentIndex].display;
+            phoneElement.href = phones[currentIndex].href;
+            addressElement.classList.remove('fade-out');
+            phoneElement.classList.remove('fade-out');
+        }, 500);
+    }
+    
+    setInterval(rotateContent, 5000);
+})();
+</script>
                         <div class="main-menu__social">
                            <a href="#"><i class="fab fa-facebook"></i></a>
                            
@@ -292,8 +334,7 @@
                                 </div>
                                 <div class="main-menu__call-content">
                                     <p class="main-menu__call-sub-title">Call Anytime</p>
-                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                            6780</a></h5>
+                                    <h5 class="main-menu__call-number"><a href="tel:918308067878">+91 8308067878</a></h5>
                                 </div>
                             </div>
                             <div class="main-menu__search-cart-box">
@@ -554,30 +595,26 @@
                                                     <h3 class="footer-widget__title">Our Services</h3>
                                                 </div>
                                                 <ul class="footer-widget__link list-unstyled">
-                                                    <li><a href="electric-panel-solar solar Solar Installation.html">Solar Panel solar Solar Installation</a></li>
-                                                    <li><a href="installing-ceiling-fan.html">Solar solar Solar Monitoring System solar solar Solar Installation</a>
-                                                    </li>
-                                                    <li><a href="commercial-services.html">Smart Solar Battery solar solar Solar Installation</a></li>
-                                                    <li><a href="lighting-solar panels.html">solar inverter solar solar Solar Installation</a></li>
-                                                    <li><a href="short-solar panel-solar solar Solar Installation.html">Solar System solar solar Solar Installation</a></li>
+                                                    <li><a href="services.html">Solar Power Plant</a></li>
+                                                    <li><a href="services.html">Solar Water Heater</a></li>
+                                                    <li><a href="services.html">Solar Street Light</a></li>
+                                                    <li><a href="services.html">Solar Inverters</a></li>
+                                                    <li><a href="services.html">Solar Panels</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="400ms">
                                             <div class="footer-widget__contact-box">
                                                 <div class="footer-widget__title-box">
-                                                    <h3 class="footer-widget__title">Official info</h3>
+                                                    <h3 class="footer-widget__title">Our Locations</h3>
                                                 </div>
                                                 <ul class="footer-widget__contact list-unstyled">
                                                     <li>
                                                         <div class="icon">
-                                                            <span class="icon-solar battery-call"></span>
+                                                            <span class="icon-call"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="tel:885747546027">+91 8308067878
-</a></p>
-                                                            
-</a></p>
+                                                            <p><a href="tel:918308067878">+91 8308067878</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -585,8 +622,7 @@
                                                             <span class="icon-envelope"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a>
-                                                            </p>
+                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -594,7 +630,17 @@
                                                             <span class="icon-location"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                                            <p style="color: #2ecc71; font-weight: 600;">Main Office:</p>
+                                                            <p>Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar, Maharashtra</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-location"></span>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p style="color: #3498db; font-weight: 600;">Branch Office:</p>
+                                                            <p>Bharat Power Solar 220, Pimpalgaon Chilamkha Road, Panchayat Headquarter, Deolgaon Raja, Buldhana, Maharashtra - 443204</p>
                                                         </div>
                                                     </li>
                                                 </ul>

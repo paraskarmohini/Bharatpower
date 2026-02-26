@@ -1,0 +1,41 @@
+<div style="font-family: system-ui, sans-serif, Arial; font-size: 12px">
+    <div>A message by {{name}} has been received. Kindly respond at your earliest convenience.</div>
+    
+    <div style="margin-top: 20px; padding: 15px 0; border-width: 1px 0; border-style: dashed; border-color: lightgrey;">
+        <table role="presentation">
+            <tr>
+                <td style="vertical-align: top">
+                    <div style="padding: 6px 10px; margin: 0 10px; background-color: aliceblue; border-radius: 5px; font-size: 26px;" role="img">👤</div>
+                </td>
+                <td style="vertical-align: top">
+                    <div style="color: #2c3e50; font-size: 16px"><strong>{{name}}</strong></div>
+                    <div style="color: #999999; font-size: 13px; margin-top: 5px;">📅 {{time}}</div>
+                    <div style="color: #555; font-size: 13px; margin-top: 5px;">📞 {{mobile}}</div>
+                    <div style="color: #555; font-size: 13px; margin-top: 5px;">📧 {{email}}</div>
+                    <div style="color: #555; font-size: 13px; margin-top: 5px;">⚡ Solar Capacity: {{capacity}}</div>
+                    <p style="font-size: 16px; margin-top: 15px; color: #333;">{{message}}</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid #2ecc71; border-radius: 5px;">
+        <p style="margin: 0; font-size: 14px; color: #555;">
+            <strong style="color: #2ecc71;">📋 Quick Summary:</strong><br>
+            <strong>Name:</strong> {{name}}<br>
+            <strong>Email:</strong> {{email}}<br>
+            <strong>Phone:</strong> {{mobile}}<br>
+            <strong>Solar System:</strong> {{capacity}}<br>
+            <strong>Received:</strong> {{time}}
+        </p>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 10px; background-color: #fff3cd; border-radius: 5px; font-size: 13px; color: #856404;">
+        ⚠️ <strong>Action Required:</strong> Please respond to this inquiry within 24 hours for best customer service.
+    </div>
+    
+    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 11px; color: #999;">
+        <p style="margin: 0;">This email was automatically sent from the Bharat Solar website contact form.</p>
+        <p style="margin: 5px 0 0 0;">🌐 Website: www.bharatsolar.com | 📞 +91 8308067878</p>
+    </div>
+</div>

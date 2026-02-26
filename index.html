@@ -175,57 +175,106 @@
 
                             <div class="form-inner">
                                 <h4>Get a free quote</h4>
-                                <form action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/assets/inc/sendemail.php" method="POST" class="contact-form-validated">
+                                <form id="sidebar-quote-form" class="contact-form-validated">
                                     <div class="form-group">
-                                        <input type="text" name="name" placeholder="Name" required="">
+                                        <input type="text" name="name" id="sidebar-name" placeholder="Your Name" required="" style="width: 100%; padding: 12px 20px; border: 1px solid #e0e0e0; border-radius: 5px; font-size: 14px; margin-bottom: 15px; background: #f9f9f9;">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <input type="email" name="email" id="sidebar-email" placeholder="Email Address" required="" style="width: 100%; padding: 12px 20px; border: 1px solid #e0e0e0; border-radius: 5px; font-size: 14px; margin-bottom: 15px; background: #f9f9f9;">
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="message" placeholder="Message..." required></textarea>
+                                        <input type="tel" name="mobile" id="sidebar-mobile" placeholder="Phone Number" required="" pattern="[0-9]{10}" style="width: 100%; padding: 12px 20px; border: 1px solid #e0e0e0; border-radius: 5px; font-size: 14px; margin-bottom: 15px; background: #f9f9f9;">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="capacity" id="sidebar-capacity" placeholder="Solar Capacity (e.g., 3HP, 5HP, 10HP)" required="" style="width: 100%; padding: 12px 20px; border: 1px solid #e0e0e0; border-radius: 5px; font-size: 14px; margin-bottom: 15px; background: #f9f9f9;">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" id="sidebar-message" placeholder="Your Message..." required="" rows="4" style="width: 100%; padding: 12px 20px; border: 1px solid #e0e0e0; border-radius: 5px; font-size: 14px; margin-bottom: 15px; background: #f9f9f9; resize: vertical;"></textarea>
                                     </div>
                                     <div class="form-group message-btn">
-                                        <button class="thm-btn" type="submit" data-loading-text="Please wait...">
-                                            Submit Now <span class="icon-arrow-right"></span>
+                                        <button class="thm-btn" type="submit" data-loading-text="Please wait..." style="width: 100%; padding: 15px; border: none; cursor: pointer;">
+                                            Get Free Quote <span class="icon-arrow-right"></span>
                                         </button>
                                     </div>
-                                    <div class="result"></div>
+                                    <div class="result" id="sidebar-result" style="margin-top: 10px; text-align: center; font-size: 14px;"></div>
                                 </form>
                             </div>
 
-                            <div class="sidebar-contact-info">
-                                <h4>Contact Info</h4>
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <span class="icon-location"></span> 88 broklyn street, New York
+                            <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                            <script>
+                            (function() {
+                                emailjs.init('Q1ORcKRr0ZcPE8pCK');
+                            })();
+
+                            document.getElementById('sidebar-quote-form').addEventListener('submit', function(event) {
+                                event.preventDefault();
+                                
+                                const submitBtn = this.querySelector('button[type="submit"]');
+                                const resultDiv = document.getElementById('sidebar-result');
+                                
+                                submitBtn.disabled = true;
+                                submitBtn.innerHTML = 'Sending... <span class="icon-arrow-right"></span>';
+                                
+                                const now = new Date();
+                                const istTime = new Intl.DateTimeFormat('en-IN', {
+                                    timeZone: 'Asia/Kolkata',
+                                    year: 'numeric',
+                                    month: '2-digit',
+                                    day: '2-digit',
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    second: '2-digit',
+                                    hour12: true
+                                }).format(now);
+                                
+                                const templateParams = {
+                                    name: document.getElementById('sidebar-name').value,
+                                    email: document.getElementById('sidebar-email').value,
+                                    mobile: document.getElementById('sidebar-mobile').value,
+                                    capacity: document.getElementById('sidebar-capacity').value,
+                                    message: document.getElementById('sidebar-message').value,
+                                    time: istTime
+                                };
+                                
+                                emailjs.send('service_7e3n37v', 'template_x82fage', templateParams)
+                                    .then(function(response) {
+                                        resultDiv.innerHTML = '<p style="color: #2ecc71; font-weight: 600;">✓ Thank you! Your quote request has been sent successfully.</p>';
+                                        document.getElementById('sidebar-quote-form').reset();
+                                        submitBtn.disabled = false;
+                                        submitBtn.innerHTML = 'Get Free Quote <span class="icon-arrow-right"></span>';
+                                        setTimeout(() => { resultDiv.innerHTML = ''; }, 5000);
+                                    }, function(error) {
+                                        resultDiv.innerHTML = '<p style="color: #e74c3c; font-weight: 600;">✗ Failed to send. Please try again.</p>';
+                                        submitBtn.disabled = false;
+                                        submitBtn.innerHTML = 'Get Free Quote <span class="icon-arrow-right"></span>';
+                                        setTimeout(() => { resultDiv.innerHTML = ''; }, 5000);
+                                    });
+                            });
+                            </script>
+
+                            <div class="sidebar-contact-info" style="margin-top: 30px; padding: 20px; background: #f9f9f9; border-radius: 8px;">
+                                <h4 style="margin-bottom: 20px; color: #1a1a1a; font-size: 18px; font-weight: 600; border-bottom: 2px solid #2ecc71; padding-bottom: 10px;">Contact Info</h4>
+                                <ul class="list-unstyled" style="margin: 0; padding: 0;">
+                                    <li style="margin-bottom: 15px; display: flex; align-items: flex-start; padding: 10px; background: #ffffff; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                        <span class="icon-location" style="color: #2ecc71; font-size: 18px; margin-right: 12px; margin-top: 2px; flex-shrink: 0;"></span>
+                                        <span style="color: #555; font-size: 14px; line-height: 1.6;">Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar, Maharashtra</span>
                                     </li>
-                                    <li>
-                                        <span class="icon-call"></span>
-                                        <a href="tel:123456789">+91 8308067878</a>
+                                    <li style="margin-bottom: 15px; display: flex; align-items: center; padding: 10px; background: #ffffff; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                        <span class="icon-call" style="color: #2ecc71; font-size: 18px; margin-right: 12px; flex-shrink: 0;"></span>
+                                        <a href="tel:918308067878" style="color: #1a1a1a; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s;">+91 8308067878</a>
                                     </li>
-                                    <li>
-                                        <span class="icon-envelope"></span>
-                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    <li style="margin-bottom: 0; display: flex; align-items: center; padding: 10px; background: #ffffff; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                                        <span class="icon-envelope" style="color: #2ecc71; font-size: 18px; margin-right: 12px; flex-shrink: 0;"></span>
+                                        <a href="mailto:bharatpowersolarenergy4@gmail.com" style="color: #1a1a1a; text-decoration: none; font-size: 13px; font-weight: 500; word-break: break-word; transition: color 0.3s;">bharatpowersolarenergy4@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="thm-social-link1">
-                                <ul class="social-box list-unstyled">
-                                    <li>
-                                        <a href="#"><i class="icon-facebook" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icon-xpa" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icon-link-in" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icon-instagram" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            
+                            <style>
+                                .sidebar-contact-info a:hover {
+                                    color: #2ecc71 !important;
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>
@@ -241,16 +290,17 @@
         <header class="main-header">
             <div class="main-menu__top">
                 <div class="main-menu__top-inner">
-                    <ul class="list-unstyled main-menu__contact-list">
-                        <li>
+                    <marquee behavior="scroll" direction="left" scrollamount="6" style="width: 100%;" onmouseover="this.stop();" onmouseout="this.start();">
+                    <ul class="list-unstyled main-menu__contact-list" style="display: inline-flex; white-space: nowrap;">
+                        <li style="margin-right: 40px;">
                             <div class="icon">
                                 <i class="icon-call"></i>
                             </div>
                             <div class="text">
-                                <p><a href="tel:15502505260">+91 8308067878</a></p>
+                                <p><a href="tel:918308067878" id="rotating-phone">+91 8308067878</a></p>
                             </div>
                         </li>
-                        <li>
+                        <li style="margin-right: 40px;">
                             <div class="icon">
                                 <i class="icon-envelope"></i>
                             </div>
@@ -259,17 +309,94 @@
                                 </p>
                             </div>
                         </li>
-                        <li>
+                        <li style="margin-right: 40px;">
                             <div class="icon">
                                 <i class="icon-location"></i>
                             </div>
                             <div class="text">
-                                <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                <p id="rotating-address">Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar</p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-clock"></i>
+                            </div>
+                            <div class="text">
+                                <p>Mon - Fri: 09:00 - 05:00</p>
+                            </div>
+                        </li>
+                        <!-- Duplicate for continuous scroll -->
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-call"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="tel:918308067878">+91 8308067878</a></p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-envelope"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-location"></i>
+                            </div>
+                            <div class="text">
+                                <p>Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar</p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-clock"></i>
+                            </div>
+                            <div class="text">
+                                <p>Mon - Fri: 09:00 - 05:00</p>
+                            </div>
+                        </li>
+                        <!-- Third duplicate for seamless loop -->
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-call"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="tel:918308067878">+91 8308067878</a></p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-envelope"></i>
+                            </div>
+                            <div class="text">
+                                <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-location"></i>
+                            </div>
+                            <div class="text">
+                                <p>Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar</p>
+                            </div>
+                        </li>
+                        <li style="margin-right: 40px;">
+                            <div class="icon">
+                                <i class="icon-clock"></i>
+                            </div>
+                            <div class="text">
+                                <p>Mon - Fri: 09:00 - 05:00</p>
                             </div>
                         </li>
                     </ul>
+                    </marquee>
                     <p class="main-menu__top-welcome-text"></p>
-                    <div class="main-menu__top-right">
+                    <div class="main-menu__top-right" style="display: none;">
                         <div class="main-menu__top-time">
                             <div class="main-menu__top-time-icon">
                                 <span class="icon-clock"></span>
@@ -278,6 +405,53 @@
                         </div>
                        
                     </div>
+
+<style>
+#rotating-address, #rotating-phone {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#rotating-address.fade-out, #rotating-phone.fade-out {
+    opacity: 0;
+}
+</style>
+
+<script>
+(function() {
+    const addresses = [
+        'Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar',
+        'Pimpalgaon Chilamkha Road, Deolgaon Raja, Buldhana - 443204'
+    ];
+    const phones = [
+        { display: '+91 8308067878', href: 'tel:918308067878' },
+        { display: '+91 087665 36240', href: 'tel:918766536240' }
+    ];
+    let currentIndex = 0;
+    const addressElement = document.getElementById('rotating-address');
+    const phoneElement = document.getElementById('rotating-phone');
+    
+    function rotateContent() {
+        // Fade out
+        addressElement.classList.add('fade-out');
+        phoneElement.classList.add('fade-out');
+        
+        setTimeout(() => {
+            // Change content
+            currentIndex = (currentIndex + 1) % addresses.length;
+            addressElement.textContent = addresses[currentIndex];
+            phoneElement.textContent = phones[currentIndex].display;
+            phoneElement.href = phones[currentIndex].href;
+            
+            // Fade in
+            addressElement.classList.remove('fade-out');
+            phoneElement.classList.remove('fade-out');
+        }, 500);
+    }
+    
+    // Rotate every 5 seconds
+    setInterval(rotateContent, 5000);
+})();
+</script>
                 </div>
             </div>
             <nav class="main-menu">
@@ -323,8 +497,7 @@
                                 </div>
                                 <div class="main-menu__call-content">
                                     <p class="main-menu__call-sub-title">Call Anytime</p>
-                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                            6780</a></h5>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+ 91 8308067878</a></h5>
                                 </div>
                             </div>
                             <div class="main-menu__search-cart-box">
@@ -672,12 +845,12 @@
                                         <div class="services-one__icon">
                                             <span class="icon-inverter-solar battery"></span>
                                         </div>
-                                        <h3 class="services-one__title"><a href="commercial-services.html">Smart solar battery
-                                                solar solar Solar Installation<br> Service</a>
+                                        <h3 class="services-one__title"><a href="services.html">Smart Solar Battery
+                                                Installation<br> Service</a>
                                         </h3>
                                         <p class="services-one__single-text">There are many variations available
                                             majority of word have in some form suffered.</p>
-                                        <a href="commercial-services.html" class="services-one__read-more">Learn
+                                        <a href="services.html" class="services-one__read-more">Learn
                                             More<span class="icon-arrow-right"></span></a>
                                     </div>
                                 </div>
@@ -1574,7 +1747,7 @@
                                         <div class="col-xl-4 col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="400ms">
                                             <div class="footer-widget__contact-box">
                                                 <div class="footer-widget__title-box">
-                                                    <h3 class="footer-widget__title">Official info</h3>
+                                                    <h3 class="footer-widget__title">Official Info</h3>
                                                 </div>
                                                 <ul class="footer-widget__contact list-unstyled">
                                                     <li>
@@ -1582,8 +1755,7 @@
                                                             <span class="icon-phone-call"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="tel:+919288006780">+91 8308067878
-</a></p>
+                                                            <p><a href="tel:8308067878">+91 8308067878</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -1591,7 +1763,7 @@
                                                             <span class="icon-envelope"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a></p>
+                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar<br>energy4@gmail.com</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -1599,7 +1771,17 @@
                                                             <span class="icon-location"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                                            <p style="font-weight: 600; color: #2ecc71;">Main Office:</p>
+                                                            <p>Shree Venktesh Society, Near Chetak Ghoda, Sambhajinagar</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-location"></span>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p style="font-weight: 600; color: #3498db;">Branch Office:</p>
+                                                            <p>Bharat Power Solar 220, Deolgaon Raja, Buldhana - 443204</p>
                                                         </div>
                                                     </li>
                                                 </ul>

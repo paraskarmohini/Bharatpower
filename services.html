@@ -165,15 +165,15 @@
                                 <h4>Contact Info</h4>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <span class="icon-location"></span> 88 broklyn street, New York
+                                        <span class="icon-location"></span> Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar, Maharashtra
                                     </li>
                                     <li>
                                         <span class="icon-call"></span>
-                                        <a href="tel:123456789">+91 8308067878</a>
+                                        <a href="tel:918308067878">+91 8308067878</a>
                                     </li>
                                     <li>
                                         <span class="icon-envelope"></span>
-                                        <a href="mailto:info@example.com">info@example.com</a>
+                                        <a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolarenergy4@gmail.com</a>
                                     </li>
                                 </ul>
                             </div>
@@ -214,7 +214,7 @@
                                 <i class="icon-call"></i>
                             </div>
                             <div class="text">
-                                <p><a href="tel:15502505260">+1 (550) 250 5260</a></p>
+                                <p><a href="tel:918308067878" id="rotating-phone">+91 8308067878</a></p>
                             </div>
                         </li>
                         <li>
@@ -231,7 +231,7 @@
                                 <i class="icon-location"></i>
                             </div>
                             <div class="text">
-                                <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                <p id="rotating-address">Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar</p>
                             </div>
                         </li>
                     </ul>
@@ -243,6 +243,48 @@
                             </div>
                             <p class="main-menu__top-text">Mon - Fri: 09:00 - 05:00</p>
                         </div>
+
+<style>
+#rotating-address, #rotating-phone {
+    transition: opacity 0.5s ease-in-out;
+}
+
+#rotating-address.fade-out, #rotating-phone.fade-out {
+    opacity: 0;
+}
+</style>
+
+<script>
+(function() {
+    const addresses = [
+        'Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar',
+        'Pimpalgaon Chilamkha Road, Deolgaon Raja, Buldhana - 443204'
+    ];
+    const phones = [
+        { display: '+91 8308067878', href: 'tel:918308067878' },
+        { display: '+91 087665 36240', href: 'tel:918766536240' }
+    ];
+    let currentIndex = 0;
+    const addressElement = document.getElementById('rotating-address');
+    const phoneElement = document.getElementById('rotating-phone');
+    
+    function rotateContent() {
+        addressElement.classList.add('fade-out');
+        phoneElement.classList.add('fade-out');
+        
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % addresses.length;
+            addressElement.textContent = addresses[currentIndex];
+            phoneElement.textContent = phones[currentIndex].display;
+            phoneElement.href = phones[currentIndex].href;
+            addressElement.classList.remove('fade-out');
+            phoneElement.classList.remove('fade-out');
+        }, 500);
+    }
+    
+    setInterval(rotateContent, 5000);
+})();
+</script>
                         <div class="main-menu__social">
                            <a href="#"><i class="fab fa-facebook"></i></a>
                            
@@ -292,8 +334,7 @@
                                 </div>
                                 <div class="main-menu__call-content">
                                     <p class="main-menu__call-sub-title">Call Anytime</p>
-                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) -
-                                            6780</a></h5>
+                                    <h5 class="main-menu__call-number"><a href="tel:918308067878">+91 8308067878</a></h5>
                                 </div>
                             </div>
                             <div class="main-menu__search-cart-box">
@@ -356,11 +397,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-socket"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 1</p>
-                            <h3 class="services-three__title"><a href="electric-panel-solar solar Solar Installation.html">Solar Panel solar Solar Installation</a>
+                            <p class="services-three__sub-title">Product 1</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Power Plant</a>
                             </h3>
-                            <p class="services-three__text">Professional solar Solar Installation of high-efficiency solar panels for residential and commercial properties with expert guidance</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">Complete solar power plant solutions for residential, commercial, and industrial applications with high-efficiency panels</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -371,11 +412,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-ceiling-lamp"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 2</p>
-                            <h3 class="services-three__title"><a href="lighting-solar panels.html">Solar Panel Distribution</a>
+                            <p class="services-three__sub-title">Product 2</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Water Heater</a>
                             </h3>
-                            <p class="services-three__text">Wide range of premium solar panels from leading manufacturers for all types of energy requirements</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">Energy-efficient solar water heating systems for homes and businesses, reducing electricity costs significantly</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -386,11 +427,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-ceiling-lamp-2"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 3</p>
-                            <h3 class="services-three__title"><a href="solar Solar Maintenance-service.html">Solar System solar Solar Maintenance</a>
+                            <p class="services-three__sub-title">Product 3</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Street Light</a>
                             </h3>
-                            <p class="services-three__text">Regular solar Solar Maintenance and inspection services to ensure optimal performance of your solar energy systems</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">Autonomous solar-powered street lighting solutions for roads, parks, and public spaces with automatic operation</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -401,11 +442,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-solar inverter"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 4</p>
-                            <h3 class="services-three__title"><a href="commercial-services.html">Commercial Solar Solutions</a>
+                            <p class="services-three__sub-title">Product 4</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Inverters</a>
                             </h3>
-                            <p class="services-three__text">Large-scale solar panel distribution and solar Solar Installation for commercial and industrial facilities</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">High-quality solar inverters for converting DC power to AC, ensuring optimal performance and efficiency</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -416,11 +457,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-ac1"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 5</p>
-                            <h3 class="services-three__title"><a href="installing-ceiling-fan.html">Solar Energy Consultation</a>
+                            <p class="services-three__sub-title">Product 5</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Panels</a>
                             </h3>
-                            <p class="services-three__text">Expert consultation on solar energy solutions, system design, and energy efficiency optimization</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">Premium quality solar panels from leading manufacturers with high efficiency and long-lasting durability</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -431,11 +472,11 @@
                             <div class="services-three__icon">
                                 <span class="icon-air-conditioning"></span>
                             </div>
-                            <p class="services-three__sub-title">Service Type 6</p>
-                            <h3 class="services-three__title"><a href="short-solar panel-solar solar Solar Installation.html">Solar Battery Storage</a>
+                            <p class="services-three__sub-title">Product 6</p>
+                            <h3 class="services-three__title"><a href="services.html">Solar Mini System</a>
                             </h3>
-                            <p class="services-three__text">Advanced battery storage solutions for storing solar energy and ensuring uninterrupted power supply</p>
-                            <a href="" class="services-three__learn-more">Learn More<span
+                            <p class="services-three__text">Compact solar mini systems perfect for small homes, offices, and remote locations with reliable power backup</p>
+                            <a href="contact.html" class="services-three__learn-more">Get Quote<span
                                     class="icon-arrow-right"></span></a>
                         </div>
                     </div>
@@ -516,30 +557,26 @@
                                                     <h3 class="footer-widget__title">Our Services</h3>
                                                 </div>
                                                 <ul class="footer-widget__link list-unstyled">
-                                                    <li><a href="electric-panel-solar solar Solar Installation.html">Solar Panel solar Solar Installation</a></li>
-                                                    <li><a href="installing-ceiling-fan.html">Solar solar Solar Monitoring System solar solar Solar Installation</a>
-                                                    </li>
-                                                    <li><a href="commercial-services.html">Smart Solar Battery solar solar Solar Installation</a></li>
-                                                    <li><a href="lighting-solar panels.html">solar inverter solar solar Solar Installation</a></li>
-                                                    <li><a href="short-solar panel-solar solar Solar Installation.html">Solar System solar solar Solar Installation</a></li>
+                                                    <li><a href="services.html">Solar Power Plant</a></li>
+                                                    <li><a href="services.html">Solar Water Heater</a></li>
+                                                    <li><a href="services.html">Solar Street Light</a></li>
+                                                    <li><a href="services.html">Solar Inverters</a></li>
+                                                    <li><a href="services.html">Solar Panels</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="400ms">
                                             <div class="footer-widget__contact-box">
                                                 <div class="footer-widget__title-box">
-                                                    <h3 class="footer-widget__title">Official info</h3>
+                                                    <h3 class="footer-widget__title">Our Locations</h3>
                                                 </div>
                                                 <ul class="footer-widget__contact list-unstyled">
                                                     <li>
                                                         <div class="icon">
-                                                            <span class="icon-solar battery-call"></span>
+                                                            <span class="icon-call"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="tel:885747546027">+91 8308067878
-</a></p>
-                                                            
-</a></p>
+                                                            <p><a href="tel:918308067878">+91 8308067878</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -547,8 +584,7 @@
                                                             <span class="icon-envelope"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a>
-                                                            </p>
+                                                            <p><a href="mailto:bharatpowersolarenergy4@gmail.com">bharatpowersolar <br> energy4@gmail.com</a></p>
                                                         </div>
                                                     </li>
                                                     <li>
@@ -556,7 +592,17 @@
                                                             <span class="icon-location"></span>
                                                         </div>
                                                         <div class="content">
-                                                            <p>Shree venktesh society, near chetak ghoda, ch.sambhanjinagar</p>
+                                                            <p style="color: #2ecc71; font-weight: 600;">Main Office:</p>
+                                                            <p>Shree Venktesh Society, Near Chetak Ghoda, Chhatrapati Sambhajinagar, Maharashtra</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="icon">
+                                                            <span class="icon-location"></span>
+                                                        </div>
+                                                        <div class="content">
+                                                            <p style="color: #3498db; font-weight: 600;">Branch Office:</p>
+                                                            <p>Bharat Power Solar 220, Pimpalgaon Chilamkha Road, Panchayat Headquarter, Deolgaon Raja, Buldhana, Maharashtra - 443204</p>
                                                         </div>
                                                     </li>
                                                 </ul>
