@@ -242,6 +242,16 @@
     border: none;
 }
 
+@media (max-width: 767px) {
+    .video-one-contact__btn-box {
+        text-align: center;
+    }
+
+    .video-one-contact__btn-box .thm-btn {
+        display: inline-block;
+    }
+}
+
 .video-one__img-1 {
     position: absolute;
     top: -133px;
