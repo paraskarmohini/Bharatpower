@@ -2769,10 +2769,6 @@
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .main-menu__top {
-        display: none;
-    }
-
     .main-menu__wrapper-inner {
         padding: 0 15px;
     }
@@ -2833,10 +2829,6 @@
 
 
 @media (max-width: 767px) {
-    .main-menu__top {
-        display: none;
-    }
-
     .main-menu__wrapper-inner {
         padding: 0 15px;
     }
