@@ -36,6 +36,6 @@
     
     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 11px; color: #999;">
         <p style="margin: 0;">This email was automatically sent from the Bharat Solar website contact form.</p>
-        <p style="margin: 5px 0 0 0;">🌐 Website: www.bharatsolar.com | 📞 +91 8308067878</p>
+        <p style="margin: 5px 0 0 0;">🌐 Website: www.solarbharatpower.com | 📞 +91 8308067878</p>
     </div>
 </div>
