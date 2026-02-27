@@ -1284,8 +1284,8 @@
                         </div>
                         <div class="row">
                             <div class="col-xl-8 col-lg-7">
-                                <form class="contact-form-validated video-one-contact__form"
-                                    action="https://weblayout.mnsithub.com/html/Bharat Power Solar Energy/main-html/assets/inc/sendemail.php" method="post" novalidate="novalidate">
+                                <form id="video-contact-form" class="contact-form-validated video-one-contact__form"
+                                    novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6 col-md-6">
                                             <div class="video-one-contact__input-box">
@@ -1294,14 +1294,14 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6">
                                             <div class="video-one-contact__input-box">
-                                                <input type="email" name="Email" placeholder="Email Address"
+                                                <input type="email" name="email" placeholder="Email Address"
                                                     required="">
                                             </div>
                                         </div>
                                         <div class="col-xl-12">
                                             <div class="video-one-contact__input-box">
                                                 <div class="select-box">
-                                                    <select class="selectmenu wide">
+                                                    <select class="selectmenu wide" name="service">
                                                         <option selected="selected">Select Solar Service
                                                         </option>
                                                         <option>Residential Solar Installation</option>
@@ -1325,6 +1325,77 @@
                                     </div>
                                 </form>
                                 <div class="result"></div>
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var form = document.getElementById('video-contact-form');
+                                        if (!form || typeof emailjs === 'undefined') return;
+
+                                        var resultDiv = form.parentElement.querySelector('.result');
+
+                                        form.addEventListener('submit', function (event) {
+                                            event.preventDefault();
+
+                                            var submitBtn = form.querySelector('button[type="submit"]');
+                                            if (!submitBtn) return;
+
+                                            submitBtn.disabled = true;
+                                            submitBtn.innerHTML = 'Sending...';
+
+                                            var now = new Date();
+                                            var istTime = new Intl.DateTimeFormat('en-IN', {
+                                                timeZone: 'Asia/Kolkata',
+                                                year: 'numeric',
+                                                month: '2-digit',
+                                                day: '2-digit',
+                                                hour: '2-digit',
+                                                minute: '2-digit',
+                                                second: '2-digit',
+                                                hour12: true
+                                            }).format(now);
+
+                                            var name = form.querySelector('input[name="name"]') ? form.querySelector('input[name="name"]').value : '';
+                                            var email = form.querySelector('input[name="email"]') ? form.querySelector('input[name="email"]').value : '';
+                                            var serviceSelect = form.querySelector('select[name="service"]');
+                                            var service = serviceSelect ? serviceSelect.value : 'Select Solar Service';
+                                            var message = form.querySelector('textarea[name="message"]') ? form.querySelector('textarea[name="message"]').value : '';
+
+                                            var templateParams = {
+                                                name: name,
+                                                email: email,
+                                                mobile: 'N/A',
+                                                capacity: service,
+                                                message: message,
+                                                time: istTime
+                                            };
+
+                                            emailjs.send('service_7e3n37v', 'template_x82fage', templateParams)
+                                                .then(function (response) {
+                                                    if (resultDiv) {
+                                                        resultDiv.innerHTML = '<p style="color: #2ecc71; font-weight: 600;">✓ Thank you! Your message has been sent successfully.</p>';
+                                                    }
+                                                    form.reset();
+                                                    submitBtn.disabled = false;
+                                                    submitBtn.innerHTML = 'send a message';
+                                                    setTimeout(function () {
+                                                        if (resultDiv) {
+                                                            resultDiv.innerHTML = '';
+                                                        }
+                                                    }, 5000);
+                                                }, function (error) {
+                                                    if (resultDiv) {
+                                                        resultDiv.innerHTML = '<p style="color: #e74c3c; font-weight: 600;">✗ Failed to send. Please try again.</p>';
+                                                    }
+                                                    submitBtn.disabled = false;
+                                                    submitBtn.innerHTML = 'send a message';
+                                                    setTimeout(function () {
+                                                        if (resultDiv) {
+                                                            resultDiv.innerHTML = '';
+                                                        }
+                                                    }, 5000);
+                                                });
+                                        });
+                                    });
+                                </script>
                             </div>
                             <div class="col-xl-4 col-lg-5">
                                 <div class="video-one-contact__info-box">
