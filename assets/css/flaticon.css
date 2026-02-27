@@ -61,7 +61,31 @@
 }
 
 .icon-settings-1:before {
-  content: "\e92a";
+    content: "\e92a";
+}
+
+.icon-solar-panel:before {
+    content: "\e901";
+}
+
+.icon-solar-inverter:before {
+    content: "\e902";
+}
+
+.icon-inverter-solar-battery:before {
+    content: "\e903";
+}
+
+.icon-smart-battery:before {
+    content: "\e903";
+}
+
+.icon-lamp:before {
+    content: "\e904";
+}
+
+.icon-chirger:before {
+    content: "\e905";
 }
 
 .icon-smart-lighting:before {

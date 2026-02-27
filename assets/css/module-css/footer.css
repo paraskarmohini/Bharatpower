@@ -5,6 +5,7 @@
     position: relative;
     display: block;
     background-color: var(--fixpro-black);
+    padding-bottom: 20px;
     overflow: hidden;
     z-index: 1;
 }

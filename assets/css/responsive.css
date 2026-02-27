@@ -919,10 +919,12 @@
     }
 
     .why-choose-one__img-2 {
-        right: inherit;
+        left: inherit;
         bottom: inherit;
         position: relative;
         margin-top: 30px;
+        transform: none;
+        margin-left: 0;
     }
 
     .why-choose-one__shape-1 {

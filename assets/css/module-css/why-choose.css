@@ -122,11 +122,13 @@
 
 .why-choose-one__img-2 {
     position: absolute;
-    right: -360px;
+    left: 100%;
     bottom: -127px;
     overflow: hidden;
     border-radius: var(--fixpro-bdr-radius);
     z-index: 1;
+    width: 100%;
+    margin-left: 20px;
 }
 
 .why-choose-one__img-2::before {
@@ -149,7 +151,7 @@
 }
 
 .why-choose-one__img-2 img {
-    width: auto;
+    width: 100%;
     border-radius: var(--fixpro-bdr-radius);
     transition: all 500ms ease;
 }
